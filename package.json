@@ -19,5 +19,17 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollowdoor/markdown_to_code.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hollowdoor/markdown_to_code/issues"
+  },
+  "homepage": "https://github.com/hollowdoor/markdown_to_code#readme"
 }
