@@ -1,0 +1,23 @@
+{
+  "name": "markdown-to-code",
+  "version": "1.0.0",
+  "description": "Create code from a markdown file",
+  "main": "index.js",
+  "jsnext:main": "src.js",
+  "module": "src.js",
+  "scripts": {
+    "build": "rollup src.js --o index.js --f cjs",
+    "test": "npm run build && cd test && node run.js"
+  },
+  "keywords": [
+    "markdown",
+    "code",
+    "build",
+    "transform"
+  ],
+  "author": "Quentin Engles <hollowdoor99@gmail.com> (https://hollowdoor.github.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.1"
+  }
+}
