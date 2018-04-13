@@ -60,7 +60,7 @@ class Transfer {
     write(out){
         return this.pending.then(code=>{
             return writeFile(out, code)
-            .then(v=>code);
+            .then(v=>({code,filename:this.filename}));
         });
     }
 }
