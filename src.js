@@ -6,17 +6,17 @@ const writeFile = Promise.promisify(fs.writeFile);
 export const splitBy = /([\s\S]+?)(```)([\S]*?)\n([\s\S]+?\n)(```)([\s\S]+?)/;
 
 
-export function toCode(str, type = false){
+export function toCode(str, type = false, map = (code)=>code){
 
     const getBlock = type
     ? (code, codeType)=>{
         if(codeType === type){
-            return code;
+            return map(code);
         }
         return '';
     }
     : (code)=>{
-        return code;
+        return map(code);
     };
 
     let code = '';

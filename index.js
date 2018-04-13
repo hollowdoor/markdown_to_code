@@ -13,17 +13,17 @@ const writeFile = Promise.promisify(fs.writeFile);
 const splitBy = /([\s\S]+?)(```)([\S]*?)\n([\s\S]+?\n)(```)([\s\S]+?)/;
 
 
-function toCode(str, type = false){
+function toCode(str, type = false, map = (code)=>code){
 
     const getBlock = type
     ? (code, codeType)=>{
         if(codeType === type){
-            return code;
+            return map(code);
         }
         return '';
     }
     : (code)=>{
-        return code;
+        return map(code);
     };
 
     let code = '';
