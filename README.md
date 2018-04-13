@@ -19,7 +19,12 @@ mdToCode({
     //The markdown file name
     filename:'test.md',
     //Filter by type
-    type: 'javascript'
+    type: 'javascript',
+    //map is optional, gets each block of code,
+    //and must return a string if you set it
+    map(code){
+        return code;
+    }
 })
 //Write to a file
 .write('out.js')

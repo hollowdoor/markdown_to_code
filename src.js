@@ -34,21 +34,22 @@ export function toCode(str, type = false, map = (code)=>code){
     return code;
 }
 
-export function readCode(filename, type){
+export function readCode(filename, type, map){
     return readFile(filename, 'utf8')
     .then(str=>{
-        return toCode(str, type);
+        return toCode(str, type, map);
     });
 }
 
 class Transfer {
     constructor({
         filename = '',
-        type = null
+        type = null,
+        map = (code)=>code
     } = {}){
         this.filename = filename;
         this.type = type;
-        this.pending = readCode(filename, type);
+        this.pending = readCode(filename, type, map);
     }
     write(out){
         return this.pending.then(code=>{
