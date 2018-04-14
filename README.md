@@ -29,9 +29,34 @@ mdToCode({
 //Write to a file
 .write('out.js')
 .then(({code, filename})=>{
-    console.log(fs.readFileSync('out.js', 'utf8'));
+    //Prove the new code file exists
+    console.log(fs.readFileSync(filename, 'utf8'));
 })
 .catch(err=>console.log(err));
+```
+
+A markdown file like this:
+
+~~~~markdown
+Title
+===
+
+```javascript
+let me = 'exist';
+```
+
+```javascript
+
+let that = me;
+```
+~~~~
+
+Will be turned into this:
+
+```javascript
+let me = 'exist';
+
+let that = me;
 ```
 
 About
